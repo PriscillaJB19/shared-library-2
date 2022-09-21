@@ -1,14 +1,14 @@
 def build(Map params){
-    bash "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerArgs} ${params.DockerContext}"
+    pwsh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerArgs} ${params.DockerContext}"
 }
 
 def push(Map params){
-    bash "docker push ${params.DockerImage}"
+    pwsh "docker push ${params.DockerImage}"
 }
 
 def promoter(Map params){
-    bash "docker pull ${params.DockerImage}"
-    bash "docker tag ${params.DockerImage} ${params.DockerNewImage}"
-    bash "docker push ${params.DockerNewImage}"
+    pwsh "docker pull ${params.DockerImage}"
+    pwsh "docker tag ${params.DockerImage} ${params.DockerNewImage}"
+    pwsh "docker push ${params.DockerNewImage}"
 }
 
