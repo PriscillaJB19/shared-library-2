@@ -1,14 +1,14 @@
 def build(Map params){
-    bat "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerArgs} ${params.DockerContext}"
+    powershell "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerArgs} ${params.DockerContext}"
 }
 
 def push(Map params){
-    bat "docker push ${params.DockerImage}"
+    powershell "docker push ${params.DockerImage}"
 }
 
 def promoter(Map params){
-    bat "docker pull ${params.DockerImage}"
-    bat "docker tag ${params.DockerImage} ${params.DockerNewImage}"
-    bat "docker push ${params.DockerNewImage}"
+    powershell "docker pull ${params.DockerImage}"
+    powershell "docker tag ${params.DockerImage} ${params.DockerNewImage}"
+    powershell "docker push ${params.DockerNewImage}"
 }
 
