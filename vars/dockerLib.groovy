@@ -1,5 +1,4 @@
 def build(Map params){
-    sh echo "Hola"
     sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerArgs} ${params.DockerContext}"
 }
 
