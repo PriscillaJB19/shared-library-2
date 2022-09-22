@@ -3,7 +3,7 @@ def build(Map params){
 }
 
 def push(Map params){
-    powershell "docker push ${params.DockerImage}"
+    sh "docker push ${params.DockerImage}"
 }
 
 def promoter(Map params){
