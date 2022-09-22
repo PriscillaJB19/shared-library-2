@@ -1,12 +1,9 @@
 def build(Map params){
-    agent{dockerL
     docker{
-      echo "Hola" // sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
+        sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
     }
-    }
-
-    
 }
+
 
 def push(Map params){
     sh "docker push ${params.DockerImage}"
