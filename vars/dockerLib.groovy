@@ -1,5 +1,5 @@
 def build(Map params){
-    sh "dotnet build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
+    sh "donet build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
 }
 
 def push(Map params){
