@@ -1,5 +1,11 @@
 def build(Map params){
-    sh "donet build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
+    agent{dockerL
+    docker{
+        sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
+    }
+    }
+
+    
 }
 
 def push(Map params){
