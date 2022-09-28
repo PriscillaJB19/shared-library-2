@@ -1,5 +1,5 @@
 def call  (Map params = [:]){
-    sh "docker build -f ${params.DockerfilePath} -t ${params.DockerImage} ${params.DockerContext}"
+    sh "docker build -t ${params.DockerImage}"
 }
 
 
